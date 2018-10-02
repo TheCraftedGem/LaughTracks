@@ -1,0 +1,15 @@
+<h1> All Comedians </h1>
+
+<h2>Average Age: <%=@comedians.average_age%> </h2>
+<h2>Runtime Runtime: <%=@comedians.specials.run_time%> </h2>
+
+<% @comedians.each do |comedian| %>
+  <ul>
+    <li> Name: <%= comedian.name %></li>
+    <li> Age: <%= comedian.age %></li>
+    <li> City: <%= comedian.city %></li>
+    <li>Specials: <%= comedian.specials.name%></li>
+    <li> Specials: <%= comedian.specials.run_time %></li>
+
+  </ul>
+<% end %>
