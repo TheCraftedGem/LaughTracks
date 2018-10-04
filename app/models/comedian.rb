@@ -1,7 +1,5 @@
 class Comedian < ActiveRecord::Base
-  validates :name, presence: true
-  validates :age, presence: true
-  validates :city, presence: true
+  validates_presence_of :name, :age, :city
   has_many :specials
 
   def self.average_age
