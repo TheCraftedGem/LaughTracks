@@ -12,17 +12,8 @@
 #   end
 
 #   self.load('db/comedians.csv')
-# require File.expand_path('../../config/environment.rb', __FILE__)
+require File.expand_path('../../config/environment.rb', __FILE__)
 
 
-require 'postgresql'
-
-
-
-database = SQLite3::Database.new("db/task_manager_development.db")
-database.execute("CREATE TABLE tasks (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                      title VARCHAR(64),
-                                      description VARCHAR(64)
-                                     );"
-                )
-puts "creating tasks table for development"
+dave = Comedian.create!(name: "Dave Chappelle", age: 54, city: "woof")
+half_baked_special = dave.specials.create!(name: "Half Baked", runtime: 45)

@@ -1,9 +1,13 @@
 ENV["RACK_ENV"] ||= "test"
 
 require 'bundler'
+require 'simplecov'
 
 Bundler.require(:default, :test)
+SimpleCov.start
+
 require File.expand_path('../../config/environment.rb', __FILE__)
+
 require 'capybara/dsl'
 
 Capybara.app = LaughTracksApp
